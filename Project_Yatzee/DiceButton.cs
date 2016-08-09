@@ -4,10 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project_Yatzee.GameLogic
+namespace Project_Yatzee
 {
-    public class Dice : System.Windows.Forms.UserControl
+    public class DiceButton
     {
+        public int Value { get; set; }
+
+
         private bool m_bHoldState = false;
 
         public bool HoldState
@@ -23,7 +26,7 @@ namespace Project_Yatzee.GameLogic
             result = rnd.Next(1, 7);
             return result;
         }
-
-
     }
+
+
 }

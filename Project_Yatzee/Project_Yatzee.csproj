@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DiceButton.cs" />
     <Compile Include="Client\Player.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -53,7 +54,9 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="GameLogic\Dice.cs" />
+    <Compile Include="GameLogic\Dice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="GameLogic\Game.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
