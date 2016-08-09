@@ -14,7 +14,7 @@ namespace Project_Yatzee
         [STAThread]
         static void Main()
         {
-            //Hej
+            //Hejskflösd
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
