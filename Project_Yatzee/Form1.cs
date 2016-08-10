@@ -16,10 +16,10 @@ namespace Project_Yatzee
     public partial class Form1 : Form
     {
         public int counter;
+        public int counterClicked = 0;
         public int TotalScore;
         public int TotalLowerScore;
         public int TotalUpperScore;
-        //public List<DiceButton> myButtons = new List<DiceButton>();
         public List<DiceButton> buttonList = new List<DiceButton>();
         CalculateScore score = new CalculateScore();
 
@@ -31,8 +31,6 @@ namespace Project_Yatzee
 
         public void CreateButtonList()
         {
-            //DiceButton button1 = new DiceButton();
-            //button1.Value = Convert.ToInt32(buttonDice1.Text);
             buttonList.Add(buttonDice1);
             buttonList.Add(buttonDice2);
             buttonList.Add(buttonDice3);
@@ -48,8 +46,11 @@ namespace Project_Yatzee
         private void buttonRoll_Click(object sender, EventArgs e)
         {
             counter++;
-            if (counter < 100)
+            if (counter < 4)
+            {
                 RollDice();
+                counterClicked = 0;
+            }
             else
                 MessageBox.Show("No more throws");
         }
@@ -71,8 +72,17 @@ namespace Project_Yatzee
 
         private void buttonDice_Click(object sender, EventArgs e)
         {
+
             DiceButton diceButton = sender as DiceButton;
             diceButton.HoldState = !diceButton.HoldState;
+
+            if (diceButton.HoldState)
+            {
+                diceButton.BackColor = Color.White;
+
+            }
+            else
+                diceButton.BackColor = Color.LightGray;
         }
 
 
@@ -153,7 +163,7 @@ namespace Project_Yatzee
                 CalulateTotalUpper(displayScore);
             }
         }
-    
+
 
         private void button4_Click_1(object sender, EventArgs e)
         {
@@ -168,8 +178,24 @@ namespace Project_Yatzee
 
         private void CalculateTotal(int displayScore)
         {
-            TotalScore += displayScore;
-            tableLayoutPanel1.Controls[17].Text = TotalScore.ToString();
+            if (counterClicked == 0)
+            {
+                TotalScore += displayScore;
+                tableLayoutPanel1.Controls[17].Text = TotalScore.ToString();
+                counter = 0;
+                counterClicked = 1;
+                ResetDice();
+            } 
+        }
+
+        private void ResetDice()
+        {
+            foreach (var listButton in buttonList)
+            {
+                listButton.HoldState = false;
+                listButton.BackColor = Color.LightGray;
+                listButton.Value = 0;
+            }
         }
 
         private void button5_Click_1(object sender, EventArgs e)
@@ -281,13 +307,13 @@ namespace Project_Yatzee
                 tableLayoutPanel1.Controls[9].Text = displayScore.ToString();
 
                 CalulateTotalLower(displayScore);
-                
+
                 CalculateTotal(displayScore);
                 //int temp = Convert.ToInt32(tableLayoutPanel1.Controls[16].Text) +displayScore;
                 //tableLayoutPanel1.Controls[16].Text += temp.ToString();
             }
         }
-        private void AddToTotal(int position,int scoreToAdd, bool LowerScore)
+        private void AddToTotal(int position, int scoreToAdd, bool LowerScore)
         {
 
         }
