@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.buttonRoll = new System.Windows.Forms.Button();
-            this.buttonDice1 = new System.Windows.Forms.Button();
-            this.buttonDice2 = new System.Windows.Forms.Button();
-            this.buttonDice3 = new System.Windows.Forms.Button();
-            this.buttonDice4 = new System.Windows.Forms.Button();
-            this.buttonDice5 = new System.Windows.Forms.Button();
+            this.buttonDice1 = new Project_Yatzee.DiceButton();
+            this.buttonDice2 = new Project_Yatzee.DiceButton();
+            this.buttonDice3 = new Project_Yatzee.DiceButton();
+            this.buttonDice4 = new Project_Yatzee.DiceButton();
+            this.buttonDice5 = new Project_Yatzee.DiceButton();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
@@ -54,11 +54,6 @@
             this.buttonYatzee = new System.Windows.Forms.Button();
             this.buttonLowerTotal = new System.Windows.Forms.Button();
             this.buttonTotal = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // buttonRoll
@@ -73,50 +68,64 @@
             // 
             // buttonDice1
             // 
+            this.buttonDice1.HoldState = false;
             this.buttonDice1.Location = new System.Drawing.Point(354, 25);
             this.buttonDice1.Name = "buttonDice1";
             this.buttonDice1.Size = new System.Drawing.Size(75, 61);
             this.buttonDice1.TabIndex = 1;
             this.buttonDice1.Text = "buttonDice1";
             this.buttonDice1.UseVisualStyleBackColor = true;
-            this.buttonDice1.Click += new System.EventHandler(this.buttonDice1_Click);
+            this.buttonDice1.Value = 0;
+            this.buttonDice1.Click += new System.EventHandler(this.buttonDice_Click);
             this.buttonDice1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.buttonDice1_MouseClick);
             // 
             // buttonDice2
             // 
+            this.buttonDice2.HoldState = false;
             this.buttonDice2.Location = new System.Drawing.Point(352, 108);
             this.buttonDice2.Name = "buttonDice2";
             this.buttonDice2.Size = new System.Drawing.Size(75, 65);
             this.buttonDice2.TabIndex = 1;
             this.buttonDice2.Text = "buttonDice2";
             this.buttonDice2.UseVisualStyleBackColor = true;
+            this.buttonDice2.Value = 0;
+            this.buttonDice2.Click += new System.EventHandler(this.buttonDice_Click);
             // 
             // buttonDice3
             // 
+            this.buttonDice3.HoldState = false;
             this.buttonDice3.Location = new System.Drawing.Point(352, 199);
             this.buttonDice3.Name = "buttonDice3";
             this.buttonDice3.Size = new System.Drawing.Size(75, 65);
             this.buttonDice3.TabIndex = 1;
             this.buttonDice3.Text = "buttonDice3";
             this.buttonDice3.UseVisualStyleBackColor = true;
+            this.buttonDice3.Value = 0;
+            this.buttonDice3.Click += new System.EventHandler(this.buttonDice_Click);
             // 
             // buttonDice4
             // 
+            this.buttonDice4.HoldState = false;
             this.buttonDice4.Location = new System.Drawing.Point(352, 283);
             this.buttonDice4.Name = "buttonDice4";
             this.buttonDice4.Size = new System.Drawing.Size(75, 69);
             this.buttonDice4.TabIndex = 1;
             this.buttonDice4.Text = "buttonDice4";
             this.buttonDice4.UseVisualStyleBackColor = true;
+            this.buttonDice4.Value = 0;
+            this.buttonDice4.Click += new System.EventHandler(this.buttonDice_Click);
             // 
             // buttonDice5
             // 
+            this.buttonDice5.HoldState = false;
             this.buttonDice5.Location = new System.Drawing.Point(352, 374);
             this.buttonDice5.Name = "buttonDice5";
             this.buttonDice5.Size = new System.Drawing.Size(75, 71);
             this.buttonDice5.TabIndex = 1;
             this.buttonDice5.Text = "buttonDice5";
             this.buttonDice5.UseVisualStyleBackColor = true;
+            this.buttonDice5.Value = 0;
+            this.buttonDice5.Click += new System.EventHandler(this.buttonDice_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -312,67 +321,12 @@
             this.buttonTotal.Text = "buttonTotal";
             this.buttonTotal.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(435, 48);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(80, 17);
-            this.checkBox1.TabIndex = 4;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(435, 130);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(80, 17);
-            this.checkBox2.TabIndex = 4;
-            this.checkBox2.Text = "checkBox1";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(435, 229);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(80, 17);
-            this.checkBox3.TabIndex = 4;
-            this.checkBox3.Text = "checkBox1";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(435, 310);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(80, 17);
-            this.checkBox4.TabIndex = 4;
-            this.checkBox4.Text = "checkBox1";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(435, 404);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(80, 17);
-            this.checkBox5.TabIndex = 4;
-            this.checkBox5.Text = "checkBox1";
-            this.checkBox5.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(671, 469);
-            this.Controls.Add(this.checkBox5);
-            this.Controls.Add(this.checkBox4);
-            this.Controls.Add(this.checkBox3);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.buttonTotal);
             this.Controls.Add(this.buttonLowerTotal);
             this.Controls.Add(this.buttonYatzee);
@@ -408,11 +362,11 @@
         #endregion
 
         private System.Windows.Forms.Button buttonRoll;
-        private System.Windows.Forms.Button buttonDice1;
-        private System.Windows.Forms.Button buttonDice2;
-        private System.Windows.Forms.Button buttonDice3;
-        private System.Windows.Forms.Button buttonDice4;
-        private System.Windows.Forms.Button buttonDice5;
+        private DiceButton buttonDice1;
+        private DiceButton buttonDice2;
+        private DiceButton buttonDice3;
+        private DiceButton buttonDice4;
+        private DiceButton buttonDice5;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button button1;
@@ -433,11 +387,6 @@
         private System.Windows.Forms.Button buttonYatzee;
         private System.Windows.Forms.Button buttonLowerTotal;
         private System.Windows.Forms.Button buttonTotal;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox5;
     }
 }
 

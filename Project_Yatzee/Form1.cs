@@ -17,12 +17,14 @@ namespace Project_Yatzee
     {
         public int counter;
         //public List<DiceButton> myButtons = new List<DiceButton>();
-        public List<System.Windows.Forms.Button> buttonList = new List<System.Windows.Forms.Button>();
+        public List<DiceButton> buttonList = new List<DiceButton>();
+        List<System.Windows.Forms.CheckBox> checkboxList = new List<System.Windows.Forms.CheckBox>();
 
         public Form1()
         {
             InitializeComponent();
             CreateButtonList();
+
         }
 
         public void CreateButtonList()
@@ -35,6 +37,14 @@ namespace Project_Yatzee
             buttonList.Add(buttonDice4);
             buttonList.Add(buttonDice5);
         }
+        public void CreateCheckboxList()
+        {
+            checkboxList.Add(checkBox1);
+            checkboxList.Add(checkBox2);
+            checkboxList.Add(checkBox3);
+            checkboxList.Add(checkBox4);
+            checkboxList.Add(checkBox5);
+        }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
@@ -43,6 +53,7 @@ namespace Project_Yatzee
 
         private void buttonRoll_Click(object sender, EventArgs e)
         {
+
             counter++;
             if (counter < 4)
                 RollDice();
@@ -54,28 +65,50 @@ namespace Project_Yatzee
         {
             Random rnd = new Random();
             int result;
+
             foreach (var button in buttonList)
             {
-                //if (!checkBox1.Checked)
-                //{
-                //}
-                result = rnd.Next(1, 7);
-                Dice dice = new Dice();
-                button.Text = result.ToString();
+                if (!button.HoldState)
+                {
+                    result = rnd.Next(1, 7);
+                    Dice dice = new Dice();
+                    button.Text = result.ToString();
+                }
+
+
             }
+
         }
 
-        private void buttonDice1_Click(object sender, EventArgs e)
+
+
+        private void buttonDice_Click(object sender, EventArgs e)
         {
-            CheckIfButtonClicked();
+            DiceButton diceButton = sender as DiceButton;
+            diceButton.HoldState = !diceButton.HoldState;
         }
 
-        private static void CheckIfButtonClicked()
-        {
-        }
 
         private void buttonDice1_MouseClick(object sender, MouseEventArgs e)
         {
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            //if(checkBox1.Checked)
+            //{
+            //    DiceButton dice = new DiceButton();
+            //    dice.HoldState = true;
+            //    //RollDice();
+            //}
+
+            //this.Controls
+
+        }
+
+        private void buttonDice2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

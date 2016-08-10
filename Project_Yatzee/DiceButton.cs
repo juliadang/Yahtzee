@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Project_Yatzee
 {
-    public class DiceButton
+    public class DiceButton : Button
     {
         public int Value { get; set; }
 
 
         private bool m_bHoldState = false;
+        
 
         public bool HoldState
         {
