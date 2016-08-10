@@ -29,13 +29,7 @@
         private void InitializeComponent()
         {
             this.buttonRoll = new System.Windows.Forms.Button();
-            this.buttonDice1 = new Project_Yatzee.DiceButton();
-            this.buttonDice2 = new Project_Yatzee.DiceButton();
-            this.buttonDice3 = new Project_Yatzee.DiceButton();
-            this.buttonDice4 = new Project_Yatzee.DiceButton();
-            this.buttonDice5 = new Project_Yatzee.DiceButton();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -54,6 +48,12 @@
             this.buttonYatzee = new System.Windows.Forms.Button();
             this.buttonLowerTotal = new System.Windows.Forms.Button();
             this.buttonTotal = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonDice5 = new Project_Yatzee.DiceButton();
+            this.buttonDice4 = new Project_Yatzee.DiceButton();
+            this.buttonDice3 = new Project_Yatzee.DiceButton();
+            this.buttonDice2 = new Project_Yatzee.DiceButton();
+            this.buttonDice1 = new Project_Yatzee.DiceButton();
             this.SuspendLayout();
             // 
             // buttonRoll
@@ -65,99 +65,6 @@
             this.buttonRoll.Text = "Roll";
             this.buttonRoll.UseVisualStyleBackColor = true;
             this.buttonRoll.Click += new System.EventHandler(this.buttonRoll_Click);
-            // 
-            // buttonDice1
-            // 
-            this.buttonDice1.HoldState = false;
-            this.buttonDice1.Location = new System.Drawing.Point(354, 25);
-            this.buttonDice1.Name = "buttonDice1";
-            this.buttonDice1.Size = new System.Drawing.Size(75, 61);
-            this.buttonDice1.TabIndex = 1;
-            this.buttonDice1.Text = "buttonDice1";
-            this.buttonDice1.UseVisualStyleBackColor = true;
-            this.buttonDice1.Value = 0;
-            this.buttonDice1.Click += new System.EventHandler(this.buttonDice_Click);
-            this.buttonDice1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.buttonDice1_MouseClick);
-            // 
-            // buttonDice2
-            // 
-            this.buttonDice2.HoldState = false;
-            this.buttonDice2.Location = new System.Drawing.Point(352, 108);
-            this.buttonDice2.Name = "buttonDice2";
-            this.buttonDice2.Size = new System.Drawing.Size(75, 65);
-            this.buttonDice2.TabIndex = 1;
-            this.buttonDice2.Text = "buttonDice2";
-            this.buttonDice2.UseVisualStyleBackColor = true;
-            this.buttonDice2.Value = 0;
-            this.buttonDice2.Click += new System.EventHandler(this.buttonDice_Click);
-            // 
-            // buttonDice3
-            // 
-            this.buttonDice3.HoldState = false;
-            this.buttonDice3.Location = new System.Drawing.Point(352, 199);
-            this.buttonDice3.Name = "buttonDice3";
-            this.buttonDice3.Size = new System.Drawing.Size(75, 65);
-            this.buttonDice3.TabIndex = 1;
-            this.buttonDice3.Text = "buttonDice3";
-            this.buttonDice3.UseVisualStyleBackColor = true;
-            this.buttonDice3.Value = 0;
-            this.buttonDice3.Click += new System.EventHandler(this.buttonDice_Click);
-            // 
-            // buttonDice4
-            // 
-            this.buttonDice4.HoldState = false;
-            this.buttonDice4.Location = new System.Drawing.Point(352, 283);
-            this.buttonDice4.Name = "buttonDice4";
-            this.buttonDice4.Size = new System.Drawing.Size(75, 69);
-            this.buttonDice4.TabIndex = 1;
-            this.buttonDice4.Text = "buttonDice4";
-            this.buttonDice4.UseVisualStyleBackColor = true;
-            this.buttonDice4.Value = 0;
-            this.buttonDice4.Click += new System.EventHandler(this.buttonDice_Click);
-            // 
-            // buttonDice5
-            // 
-            this.buttonDice5.HoldState = false;
-            this.buttonDice5.Location = new System.Drawing.Point(352, 374);
-            this.buttonDice5.Name = "buttonDice5";
-            this.buttonDice5.Size = new System.Drawing.Size(75, 71);
-            this.buttonDice5.TabIndex = 1;
-            this.buttonDice5.Text = "buttonDice5";
-            this.buttonDice5.UseVisualStyleBackColor = true;
-            this.buttonDice5.Value = 0;
-            this.buttonDice5.Click += new System.EventHandler(this.buttonDice_Click);
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.AutoSize = true;
-            this.tableLayoutPanel1.BackColor = System.Drawing.SystemColors.Window;
-            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(118, 42);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 18;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 379);
-            this.tableLayoutPanel1.TabIndex = 2;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // button1
             // 
@@ -322,6 +229,98 @@
             this.buttonTotal.Text = "buttonTotal";
             this.buttonTotal.UseVisualStyleBackColor = true;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.AutoSize = true;
+            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(118, 42);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 18;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 379);
+            this.tableLayoutPanel1.TabIndex = 2;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            // 
+            // buttonDice5
+            // 
+            this.buttonDice5.HoldState = false;
+            this.buttonDice5.Location = new System.Drawing.Point(352, 374);
+            this.buttonDice5.Name = "buttonDice5";
+            this.buttonDice5.Size = new System.Drawing.Size(75, 71);
+            this.buttonDice5.TabIndex = 1;
+            this.buttonDice5.Text = "buttonDice5";
+            this.buttonDice5.UseVisualStyleBackColor = true;
+            this.buttonDice5.Value = 0;
+            this.buttonDice5.Click += new System.EventHandler(this.buttonDice_Click);
+            // 
+            // buttonDice4
+            // 
+            this.buttonDice4.HoldState = false;
+            this.buttonDice4.Location = new System.Drawing.Point(352, 283);
+            this.buttonDice4.Name = "buttonDice4";
+            this.buttonDice4.Size = new System.Drawing.Size(75, 69);
+            this.buttonDice4.TabIndex = 1;
+            this.buttonDice4.Text = "buttonDice4";
+            this.buttonDice4.UseVisualStyleBackColor = true;
+            this.buttonDice4.Value = 0;
+            this.buttonDice4.Click += new System.EventHandler(this.buttonDice_Click);
+            // 
+            // buttonDice3
+            // 
+            this.buttonDice3.HoldState = false;
+            this.buttonDice3.Location = new System.Drawing.Point(352, 199);
+            this.buttonDice3.Name = "buttonDice3";
+            this.buttonDice3.Size = new System.Drawing.Size(75, 65);
+            this.buttonDice3.TabIndex = 1;
+            this.buttonDice3.Text = "buttonDice3";
+            this.buttonDice3.UseVisualStyleBackColor = true;
+            this.buttonDice3.Value = 0;
+            this.buttonDice3.Click += new System.EventHandler(this.buttonDice_Click);
+            // 
+            // buttonDice2
+            // 
+            this.buttonDice2.HoldState = false;
+            this.buttonDice2.Location = new System.Drawing.Point(352, 108);
+            this.buttonDice2.Name = "buttonDice2";
+            this.buttonDice2.Size = new System.Drawing.Size(75, 65);
+            this.buttonDice2.TabIndex = 1;
+            this.buttonDice2.Text = "buttonDice2";
+            this.buttonDice2.UseVisualStyleBackColor = true;
+            this.buttonDice2.Value = 0;
+            this.buttonDice2.Click += new System.EventHandler(this.buttonDice_Click);
+            // 
+            // buttonDice1
+            // 
+            this.buttonDice1.HoldState = false;
+            this.buttonDice1.Location = new System.Drawing.Point(354, 25);
+            this.buttonDice1.Name = "buttonDice1";
+            this.buttonDice1.Size = new System.Drawing.Size(75, 61);
+            this.buttonDice1.TabIndex = 1;
+            this.buttonDice1.Text = "buttonDice1";
+            this.buttonDice1.UseVisualStyleBackColor = true;
+            this.buttonDice1.Value = 0;
+            this.buttonDice1.Click += new System.EventHandler(this.buttonDice_Click);
+            this.buttonDice1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.buttonDice1_MouseClick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -355,6 +354,7 @@
             this.Controls.Add(this.buttonRoll);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -369,7 +369,6 @@
         private DiceButton buttonDice4;
         private DiceButton buttonDice5;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
@@ -388,6 +387,7 @@
         private System.Windows.Forms.Button buttonYatzee;
         private System.Windows.Forms.Button buttonLowerTotal;
         private System.Windows.Forms.Button buttonTotal;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }
 

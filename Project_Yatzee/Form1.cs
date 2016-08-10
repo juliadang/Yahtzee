@@ -18,12 +18,12 @@ namespace Project_Yatzee
         public int counter;
         //public List<DiceButton> myButtons = new List<DiceButton>();
         public List<DiceButton> buttonList = new List<DiceButton>();
+        CalculateScore score = new CalculateScore();
 
         public Form1()
         {
             InitializeComponent();
             CreateButtonList();
-
         }
 
         public void CreateButtonList()
@@ -36,16 +36,14 @@ namespace Project_Yatzee
             buttonList.Add(buttonDice4);
             buttonList.Add(buttonDice5);
         }
-     
+
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void buttonRoll_Click(object sender, EventArgs e)
         {
-
             counter++;
             if (counter < 4)
                 RollDice();
@@ -56,23 +54,17 @@ namespace Project_Yatzee
         private void RollDice()
         {
             Random rnd = new Random();
-            int result;
 
             foreach (var button in buttonList)
             {
                 if (!button.HoldState)
                 {
-                    result = rnd.Next(1, 7);
+                    button.Value = rnd.Next(1, 7);
                     Dice dice = new Dice();
-                    button.Text = result.ToString();
+                    button.Text = button.Value.ToString();
                 }
-
-
             }
-
         }
-
-
 
         private void buttonDice_Click(object sender, EventArgs e)
         {
@@ -105,7 +97,36 @@ namespace Project_Yatzee
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if ((counter > 0) && (tableLayoutPanel1.Controls[0].Text == ""))
+            {
+                int displayScore = score.AddUpDice(1, buttonList);
+                tableLayoutPanel1.Controls[0].Text = displayScore.ToString();
+            }
+        }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //TextBox Text1 = new TextBox();
+            //tableLayoutPanel1.Controls.Add(Text1, 0, 0);
+
+            //TextBox TB = sender as TextBox;
+            //int index = this.tableLayoutPanel1.Controls.GetChildIndex(TB);
+
+            int rowIndex = 0;
+            int columnIndex = 0;
+            for (int i = 0; i < 18; i++)
+            {
+                TextBox Text = new TextBox();
+                Text.Name = "text+" + i + 1;
+                //Text.TextChanged += new System.EventHandler(this.TB_TextChanged);
+                if (i % 2 == 0 && i > 0)
+                    rowIndex++;
+                if (i % 2 != 0 && i > 0)
+                    columnIndex++;
+                else
+                    columnIndex = 0;
+                this.tableLayoutPanel1.Controls.Add(Text, columnIndex, rowIndex);
+            }
         }
     }
 }
