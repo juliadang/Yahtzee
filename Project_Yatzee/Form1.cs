@@ -18,7 +18,6 @@ namespace Project_Yatzee
         public int counter;
         //public List<DiceButton> myButtons = new List<DiceButton>();
         public List<DiceButton> buttonList = new List<DiceButton>();
-        List<System.Windows.Forms.CheckBox> checkboxList = new List<System.Windows.Forms.CheckBox>();
 
         public Form1()
         {
@@ -37,14 +36,7 @@ namespace Project_Yatzee
             buttonList.Add(buttonDice4);
             buttonList.Add(buttonDice5);
         }
-        public void CreateCheckboxList()
-        {
-            checkboxList.Add(checkBox1);
-            checkboxList.Add(checkBox2);
-            checkboxList.Add(checkBox3);
-            checkboxList.Add(checkBox4);
-            checkboxList.Add(checkBox5);
-        }
+     
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
@@ -107,6 +99,11 @@ namespace Project_Yatzee
         }
 
         private void buttonDice2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }
