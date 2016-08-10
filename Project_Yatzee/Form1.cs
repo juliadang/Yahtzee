@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
 
 namespace Project_Yatzee
@@ -15,8 +16,8 @@ namespace Project_Yatzee
     public partial class Form1 : Form
     {
         public int counter;
-        public List<DiceButton> myButtons = new List<DiceButton>();
-       // public List<System.Windows.Forms.Button> buttonList = new List<System.Windows.Forms.Button>();
+        //public List<DiceButton> myButtons = new List<DiceButton>();
+        public List<System.Windows.Forms.Button> buttonList = new List<System.Windows.Forms.Button>();
 
         public Form1()
         {
@@ -26,13 +27,13 @@ namespace Project_Yatzee
 
         public void CreateButtonList()
         {
-            DiceButton button1 = new DiceButton();
+            //DiceButton button1 = new DiceButton();
             //button1.Value = Convert.ToInt32(buttonDice1.Text);
-            //myButtons.Add(new DiceButton  buttonDice1.Text );
-            //buttonList.Add(buttonDice2);
-            //buttonList.Add(buttonDice3);
-            //buttonList.Add(buttonDice4);
-            //buttonList.Add(buttonDice5);
+            buttonList.Add(buttonDice1);
+            buttonList.Add(buttonDice2);
+            buttonList.Add(buttonDice3);
+            buttonList.Add(buttonDice4);
+            buttonList.Add(buttonDice5);
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -43,28 +44,24 @@ namespace Project_Yatzee
         private void buttonRoll_Click(object sender, EventArgs e)
         {
             counter++;
-
-            int result;
-            Random rnd = new Random();
-
             if (counter < 4)
-            {
-
-                //if (button1.hol)
-                //{
-
-                //}
-                foreach (var button in myButtons)
-                {
-                    result = rnd.Next(1, 7);
-                    Dice dice = new Dice();
-                    //button.Text = result.ToString();
-                    //checkBox1.Checked
-                }
-            }
+                RollDice();
             else
-            {
                 MessageBox.Show("No more throws");
+        }
+
+        private void RollDice()
+        {
+            Random rnd = new Random();
+            int result;
+            foreach (var button in buttonList)
+            {
+                //if (!checkBox1.Checked)
+                //{
+                //}
+                result = rnd.Next(1, 7);
+                Dice dice = new Dice();
+                button.Text = result.ToString();
             }
         }
 
