@@ -55,26 +55,12 @@ namespace Project_Yatzee.GameLogic
         {
             int Sum = 0;
 
-            bool ThreeOfAKind = false;
-
-            for (int i = 1; i <= 6; i++)
+            for (int i = 1; i < 7; i++)
             {
-                int Count = 0;
-                for (int j = 0; j < 5; j++)
+                if (myDice.Where(x => x.Value == i).Count() > 2)
                 {
-                    if (myDice[j].Value == i)
-                        Count++;
-
-                    if (Count > 2)
-                        ThreeOfAKind = true;
-                }
-            }
-
-            if (ThreeOfAKind)
-            {
-                for (int k = 0; k < 5; k++)
-                {
-                    Sum += myDice[k].Value;
+                    Sum = 3 * i;
+                    break;
                 }
             }
 
@@ -88,26 +74,12 @@ namespace Project_Yatzee.GameLogic
         {
             int Sum = 0;
 
-            bool FourOfAKind = false;
-
-            for (int i = 1; i <= 6; i++)
+            for (int i = 1; i < 7; i++)
             {
-                int Count = 0;
-                for (int j = 0; j < 5; j++)
+                if(myDice.Where(x => x.Value == i).Count() > 3)
                 {
-                    if (myDice[j].Value == i)
-                        Count++;
-
-                    if (Count > 3)
-                        FourOfAKind = true;
-                }
-            }
-
-            if (FourOfAKind)
-            {
-                for (int k = 0; k < 5; k++)
-                {
-                    Sum += myDice[k].Value;
+                    Sum = 4 * i;
+                    break;
                 }
             }
 
@@ -138,6 +110,7 @@ namespace Project_Yatzee.GameLogic
                  ((i[2] == i[3]) && (i[3] == i[4])) && // Three of a Kind
                  (i[1] != i[2])))
             {
+                //todo fixa summan av tärningarna.
                 Sum = 25;
             }
 
@@ -186,7 +159,7 @@ namespace Project_Yatzee.GameLogic
                 ((i[1] == 2) && (i[2] == 3) && (i[3] == 4) && (i[4] == 5)) ||
                 ((i[1] == 3) && (i[2] == 4) && (i[3] == 5) && (i[4] == 6)))
             {
-                Sum = 30;
+                Sum = 15;
             }
 
             return Sum;

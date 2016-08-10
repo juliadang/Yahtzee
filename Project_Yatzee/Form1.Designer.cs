@@ -36,9 +36,9 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.buttonUpper = new System.Windows.Forms.Button();
-            this.buttonBonus = new System.Windows.Forms.Button();
             this.buttonUpperTotal = new System.Windows.Forms.Button();
+            this.buttonBonus = new System.Windows.Forms.Button();
+            this.buttonempty = new System.Windows.Forms.Button();
             this.buttonChance = new System.Windows.Forms.Button();
             this.button3Kind = new System.Windows.Forms.Button();
             this.button4Kind = new System.Windows.Forms.Button();
@@ -84,6 +84,7 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -93,6 +94,7 @@
             this.button3.TabIndex = 3;
             this.button3.Text = "button3";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -102,6 +104,7 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "button4";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
             // 
             // button5
             // 
@@ -111,6 +114,7 @@
             this.button5.TabIndex = 3;
             this.button5.Text = "button5";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
             // 
             // button6
             // 
@@ -120,15 +124,16 @@
             this.button6.TabIndex = 3;
             this.button6.Text = "button6";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // buttonUpper
+            // buttonUpperTotal
             // 
-            this.buttonUpper.Location = new System.Drawing.Point(44, 168);
-            this.buttonUpper.Name = "buttonUpper";
-            this.buttonUpper.Size = new System.Drawing.Size(75, 23);
-            this.buttonUpper.TabIndex = 3;
-            this.buttonUpper.Text = "buttonUpper";
-            this.buttonUpper.UseVisualStyleBackColor = true;
+            this.buttonUpperTotal.Location = new System.Drawing.Point(44, 168);
+            this.buttonUpperTotal.Name = "buttonUpperTotal";
+            this.buttonUpperTotal.Size = new System.Drawing.Size(75, 23);
+            this.buttonUpperTotal.TabIndex = 3;
+            this.buttonUpperTotal.Text = "buttonUpperTotal";
+            this.buttonUpperTotal.UseVisualStyleBackColor = true;
             // 
             // buttonBonus
             // 
@@ -138,15 +143,16 @@
             this.buttonBonus.TabIndex = 3;
             this.buttonBonus.Text = "buttonBonus";
             this.buttonBonus.UseVisualStyleBackColor = true;
+            this.buttonBonus.Click += new System.EventHandler(this.buttonBonus_Click);
             // 
-            // buttonUpperTotal
+            // buttonempty
             // 
-            this.buttonUpperTotal.Location = new System.Drawing.Point(44, 208);
-            this.buttonUpperTotal.Name = "buttonUpperTotal";
-            this.buttonUpperTotal.Size = new System.Drawing.Size(75, 23);
-            this.buttonUpperTotal.TabIndex = 3;
-            this.buttonUpperTotal.Text = "buttonUpperTotal";
-            this.buttonUpperTotal.UseVisualStyleBackColor = true;
+            this.buttonempty.Location = new System.Drawing.Point(44, 208);
+            this.buttonempty.Name = "buttonempty";
+            this.buttonempty.Size = new System.Drawing.Size(75, 23);
+            this.buttonempty.TabIndex = 3;
+            this.buttonempty.Text = " ";
+            this.buttonempty.UseVisualStyleBackColor = true;
             // 
             // buttonChance
             // 
@@ -156,6 +162,7 @@
             this.buttonChance.TabIndex = 3;
             this.buttonChance.Text = "buttonChance";
             this.buttonChance.UseVisualStyleBackColor = true;
+            this.buttonChance.Click += new System.EventHandler(this.buttonChance_Click);
             // 
             // button3Kind
             // 
@@ -165,6 +172,7 @@
             this.button3Kind.TabIndex = 3;
             this.button3Kind.Text = "button3Kind";
             this.button3Kind.UseVisualStyleBackColor = true;
+            this.button3Kind.Click += new System.EventHandler(this.button3Kind_Click);
             // 
             // button4Kind
             // 
@@ -174,6 +182,7 @@
             this.button4Kind.TabIndex = 3;
             this.button4Kind.Text = "button4Kind";
             this.button4Kind.UseVisualStyleBackColor = true;
+            this.button4Kind.Click += new System.EventHandler(this.button4Kind_Click);
             // 
             // buttonFullHouse
             // 
@@ -183,6 +192,7 @@
             this.buttonFullHouse.TabIndex = 3;
             this.buttonFullHouse.Text = "buttonFullHouse";
             this.buttonFullHouse.UseVisualStyleBackColor = true;
+            this.buttonFullHouse.Click += new System.EventHandler(this.buttonFullHouse_Click);
             // 
             // buttonSmallStraight
             // 
@@ -192,6 +202,7 @@
             this.buttonSmallStraight.TabIndex = 3;
             this.buttonSmallStraight.Text = "buttonSmallStraight";
             this.buttonSmallStraight.UseVisualStyleBackColor = true;
+            this.buttonSmallStraight.Click += new System.EventHandler(this.buttonSmallStraight_Click);
             // 
             // buttonLargeStraight
             // 
@@ -201,6 +212,7 @@
             this.buttonLargeStraight.TabIndex = 3;
             this.buttonLargeStraight.Text = "buttonLargeStraight";
             this.buttonLargeStraight.UseVisualStyleBackColor = true;
+            this.buttonLargeStraight.Click += new System.EventHandler(this.buttonLargeStraight_Click);
             // 
             // buttonYatzee
             // 
@@ -210,6 +222,7 @@
             this.buttonYatzee.TabIndex = 3;
             this.buttonYatzee.Text = "buttonYatzee";
             this.buttonYatzee.UseVisualStyleBackColor = true;
+            this.buttonYatzee.Click += new System.EventHandler(this.buttonYatzee_Click);
             // 
             // buttonLowerTotal
             // 
@@ -336,9 +349,9 @@
             this.Controls.Add(this.button4Kind);
             this.Controls.Add(this.button3Kind);
             this.Controls.Add(this.buttonChance);
-            this.Controls.Add(this.buttonUpperTotal);
+            this.Controls.Add(this.buttonempty);
             this.Controls.Add(this.buttonBonus);
-            this.Controls.Add(this.buttonUpper);
+            this.Controls.Add(this.buttonUpperTotal);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -375,9 +388,9 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button buttonUpper;
-        private System.Windows.Forms.Button buttonBonus;
         private System.Windows.Forms.Button buttonUpperTotal;
+        private System.Windows.Forms.Button buttonBonus;
+        private System.Windows.Forms.Button buttonempty;
         private System.Windows.Forms.Button buttonChance;
         private System.Windows.Forms.Button button3Kind;
         private System.Windows.Forms.Button button4Kind;
